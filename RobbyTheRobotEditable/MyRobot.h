@@ -7,14 +7,17 @@ class MyRobot :
     public Robot
 {
 public:
-    //Pointers to robot class
-    Room* room;
-
+    
     //Constructor
-    MyRobot();
-    ~MyRobot();
+    MyRobot(Room* room);
 
     // Functions
     void move(int);
+    void back();
+    void goTo(int, int);
+    ~MyRobot();
+
+private:
+    Room* room;
 };
 

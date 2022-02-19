@@ -2,14 +2,13 @@
 #include "Robot.h"
 #include "Room.h"
 
-MyRobot::MyRobot() {
-	//Sets room pointer
+MyRobot::MyRobot(Room* room) {
 	this->room = room;
 }
 
 void MyRobot::move(int n) {
 	do {	
-		if (Robot::ahead_is_colour(room, 2)) {
+		if (Robot::obstacle_ahead(room)) {
 			n = 0;
 		}
 		else {
@@ -19,6 +18,22 @@ void MyRobot::move(int n) {
 	} while (n > 0);
 }
 
+void MyRobot::back() {
+	Robot::right();
+	Robot::right();
+	if (Robot::obstacle_ahead(room)) {
+		return;
+	}
+	else {
+		Robot::move();
+		Robot::right();
+		Robot::right();
+	}
+}
+
+void MyRobot::goTo(int x, int y) {
+	//
+}
 
 MyRobot::~MyRobot() {
 }
