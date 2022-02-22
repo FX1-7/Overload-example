@@ -32,7 +32,13 @@ void MyRobot::back() {
 }
 
 void MyRobot::goTo(int x, int y) {
-	//
+	if (room->isObstacle(x, y) == true) {
+		return;
+	}
+	else {
+		Robot::setX(x);
+		Robot::setY(y);
+	}
 }
 
 MyRobot::~MyRobot() {

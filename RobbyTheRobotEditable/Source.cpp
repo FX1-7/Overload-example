@@ -19,23 +19,7 @@ int main()
 	picture->setDrawDelay(1000);
 
 	picture->draw();
-	robby->move(5);
-	picture->draw();
-	robby->right();
-	picture->draw();
-	robby->move(7);
-	picture->draw();
-	robby->left();
-	picture->draw();
-	robby->Robot::move();
-	picture->draw();
-	robby->right();
-	picture->draw();
-	robby->move(2);
-	picture->draw();
-	robby->left();
-	picture->draw();
-	robby->back();
+	robby->goTo(1, 12);
 	picture->draw();
 
 
