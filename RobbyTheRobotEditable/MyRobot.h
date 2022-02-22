@@ -15,9 +15,12 @@ public:
     void move(int);
     void back();
     void goTo(int, int);
+
+    // Deconstructor
     ~MyRobot();
 
 private:
+    // Pointer to room.
     Room* room;
 };
 

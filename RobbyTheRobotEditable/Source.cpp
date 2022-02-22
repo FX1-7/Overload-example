@@ -2,6 +2,8 @@
 #include "GraphicsManager.h"	
 #include "MyRobot.h"
 
+using namespace std;
+
 
 int main()
 
@@ -11,7 +13,7 @@ int main()
 	MyRobot* robby;
 	GraphicsManager* picture;
 
-	room = new Room(2);
+	room = new Room(0);
 	robby = new MyRobot(room);
 	picture = new GraphicsManager(room, robby);
 
@@ -19,10 +21,18 @@ int main()
 	picture->setDrawDelay(1000);
 
 	picture->draw();
-	robby->goTo(1, 12);
+	// Moves forward 5 spaces
+	robby->move(5);
+	picture->draw();
+	// Moves back a space
+	robby->back();
+	picture->draw();
+	// Moves to x = 3 y = 12.
+	robby->goTo(3, 12);
 	picture->draw();
 
+	cout << endl;
+	cout << "Finished!" << endl;
 
- 	std::cout << "hello"; //End of Instructions for Robby
 	system("Pause");
 }
